@@ -40,4 +40,4 @@ $attachments = elgg_list_entities([
 	],
 ]);
 
-return elgg_ok_response($attachments, elgg_echo('saved'));
+return elgg_ok_response($attachments, elgg_echo('save:success'));
