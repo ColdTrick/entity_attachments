@@ -9,6 +9,7 @@ class EntityAttachment extends ElggObject {
 		parent::initializeAttributes();
 
 		$this->attributes['subtype'] = 'entity_attachment';
+		$this->attributes['access_id'] = ACCESS_PUBLIC;
 	}
 
 	/**
