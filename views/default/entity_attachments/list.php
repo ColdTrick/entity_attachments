@@ -26,7 +26,9 @@ $attachments = elgg_list_entities([
 ]);
 
 $menu = '';
+$title = '';
 if ($entity->canEdit()) {
+	$title = '&nbsp'; // required to force existence of header
 	
 	elgg_require_js('entity_attachments/list');
 
@@ -51,4 +53,4 @@ if (empty($menu) && empty($attachments)) {
 	return;
 }
 
-echo elgg_view_module('entity_attachments', '&nbsp', $attachments, ['menu' => $menu]);
+echo elgg_view_module('entity_attachments', $title, $attachments, ['menu' => $menu]);
