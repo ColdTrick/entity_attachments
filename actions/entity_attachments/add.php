@@ -36,6 +36,7 @@ $attachments = elgg_list_entities([
 	'order_by_metadata' => [
 		'name' => 'order',
 		'order' => 'asc',
+		'as' => 'integer',
 	],
 ]);
 
