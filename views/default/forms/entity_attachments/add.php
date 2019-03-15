@@ -15,6 +15,8 @@ $body = elgg_view_field([
 
 $options_values = [
 	'linked_entity' => elgg_echo('entity_attachments:forms:add:type:linked_entity'),
+	'linked_group' => elgg_echo('entity_attachments:forms:add:type:linked_group'),
+	'linked_user' => elgg_echo('entity_attachments:forms:add:type:linked_user'),
 	'custom_link' => elgg_echo('entity_attachments:forms:add:type:custom_link'),
 	'download_link' => elgg_echo('entity_attachments:forms:add:type:download_link'),
 ];

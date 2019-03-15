@@ -14,6 +14,6 @@ echo elgg_view_field([
 
 echo elgg_view_field([
 	'#type' => 'text',
-	'#label' => elgg_echo('subtitle'),
+	'#label' => elgg_echo('entity_attachments:subtitle'),
 	'name' => 'params[custom_link][subtitle]',
 ]);
