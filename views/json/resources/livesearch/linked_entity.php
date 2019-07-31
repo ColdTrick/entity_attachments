@@ -29,7 +29,7 @@ $options = [
 	'item_view' => 'search/entity',
 	'input_name' => $input_name,
 ];
-error_log(var_export($options, true));
+
 $body = elgg_list_entities($options, 'elgg_search');
 
 echo elgg_view_page('', $body);
