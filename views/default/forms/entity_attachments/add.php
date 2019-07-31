@@ -29,11 +29,23 @@ $body .= elgg_view_field([
 ]);
 
 foreach ($options_values as $key => $label) {
+	$menu = '';
+	
 	$view_contents = elgg_view('forms/entity_attachments/types/' . $key, $vars);
 	$view_contents .= elgg_view_field([
 		'#type' => 'submit',
 		'value' => elgg_echo('save'),
 	]);
+	
+	if ($key === 'linked_entity') {
+		$menu .= elgg_view('output/url', [
+			'icon' => 'filter',
+			'text' => elgg_echo('filter'),
+			'href' => false,
+			'rel' => 'toggle',
+			'data-toggle-selector' => '.entity-attachments-type-linked_entity .elgg-field:has(#entity-attachments-linked-entity-filter)',
+		]);
+	}
 	
 	$body .= elgg_view_module('inline', $label, $view_contents, [
 		'class' => [
@@ -41,6 +53,7 @@ foreach ($options_values as $key => $label) {
 			'entity-attachments-type',
 			'entity-attachments-type-' . $key,
 		],
+		'menu' => $menu,
 	]);
 }
 
