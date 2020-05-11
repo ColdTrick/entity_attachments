@@ -25,4 +25,26 @@ class EntityAttachment extends ElggObject {
 	public function getURL() {
 		return $this->href ?: parent::getURL();
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	public function canEdit($user_guid = 0) {
+		$result = parent::canEdit($user_guid);
+		
+		if ($result === true) {
+			return $result;
+		}
+		
+		$container = elgg_call(ELGG_IGNORE_ACCESS, function() {
+			// some containers might be private (and not owned by logged in user)
+			return $this->getContainerEntity();
+		});
+		
+		if ($container instanceof \ElggEntity) {
+			return $container->canEdit($user_guid);
+		}
+		
+		return false;
+	}
 }
