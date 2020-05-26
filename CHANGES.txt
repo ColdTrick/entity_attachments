@@ -1,6 +1,10 @@
 Version history
 ===============
 
+1.1.1 (2020-05-26):
+
+- fixed: double check if potential hidden container can not be edited
+
 1.1 (2019-08-07):
 
 - added: filters for linked entities
