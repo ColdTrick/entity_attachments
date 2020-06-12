@@ -14,6 +14,22 @@ if (!$entity->canEdit()) {
 	return elgg_error_response(elgg_echo('actionunauthorized'));
 }
 
+$required_fields = elgg_extract($type, [
+	'custom_link' => ['href', 'title'],
+	'download_link' => ['href', 'title'],
+	'linked_entity' => ['entity_guid'],
+	'linked_group' => ['entity_guid'],
+	'linked_user' => ['entity_guid'],
+], []);
+
+foreach ($required_fields as $field) {
+	if (!empty(elgg_extract($field, $params))) {
+		continue;
+	}
+	
+	return elgg_error_response(elgg_echo('error:missing_data'));
+}
+
 $attachment = new \EntityAttachment();
 $attachment->owner_guid = $guid;
 $attachment->container_guid = $guid;

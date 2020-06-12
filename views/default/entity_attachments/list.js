@@ -17,8 +17,9 @@ define(['jquery', 'elgg', 'elgg/Ajax'], function($, elgg, Ajax) {
 	};
 	
 	$(document).on('change', '.elgg-form-entity-attachments-add .elgg-input-radio[name="type"]', function() {
-		$('.entity-attachments-type').hide();
-		$('.entity-attachments-type-' + $(this).val()).show();
+		$('.entity-attachments-type').hide().find('[required]').prop('disabled', true);
+		
+		$('.entity-attachments-type-' + $(this).val()).show().find('[required]').prop('disabled', false);
 		
 		$(window).trigger('resize.lightbox');
 	});

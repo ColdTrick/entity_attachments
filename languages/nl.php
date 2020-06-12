@@ -19,4 +19,5 @@ return array (
   'entity_attachments:forms:add:type:download_link' => 'Download link',
   'entity_attachments:href' => 'URL',
   'entity_attachments:subtitle' => 'Subtekst',
+  'entity_attachments:picker:help' => 'Voer tekst in om te zoeken en selecteer een item uit de lijst',
 );

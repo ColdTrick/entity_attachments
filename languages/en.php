@@ -18,4 +18,5 @@ return [
 
 	'entity_attachments:href' => "URL",
 	'entity_attachments:subtitle' => "Subtitle",
+	'entity_attachments:picker:help' => "Enter text to search and select an item from the list",
 ];

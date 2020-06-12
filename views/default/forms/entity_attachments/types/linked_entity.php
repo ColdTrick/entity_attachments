@@ -51,7 +51,9 @@ echo elgg_view_field([
 echo elgg_view_field([
 	'#type' => 'objectpicker',
 	'#label' => elgg_echo('entity_attachments:linked_entity:search'),
+	'#help' => elgg_echo('entity_attachments:picker:help'),
 	'name' => 'params[linked_entity][entity_guid]',
 	'limit' => 1,
 	'match_on' => 'linked_entity',
+	'required' => true,
 ]);
