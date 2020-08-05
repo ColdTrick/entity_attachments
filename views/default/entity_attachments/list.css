@@ -6,3 +6,20 @@
 		border: 0;
 	}
 }
+
+.elgg-item-object-entity_attachment .elgg-image-block {
+	flex-wrap: wrap;
+	
+	> .elgg-body {
+		min-width: 60%;
+		flex-shrink: 1;
+	}
+	
+	> .elgg-image-alt {
+		flex-grow: 1;
+		
+		> .elgg-menu-container {
+			align-items: flex-end;
+		}
+	}
+}
