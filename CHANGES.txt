@@ -1,6 +1,10 @@
 Version history
 ===============
 
+1.2.1 (2020-08-18):
+
+- fixed: styling and position of entity menu on smaller screens
+
 1.2 (2020-06-23):
 
 - changed: form fields are now required
