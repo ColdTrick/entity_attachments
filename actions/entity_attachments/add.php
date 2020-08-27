@@ -38,6 +38,11 @@ $attachment->order = time();
 $attachment->attachment_type = $type;
 
 foreach ($params as $key => $value) {
+	if (in_array($key, EntityAttachment::$primary_attr_names)) {
+		// prevent abuse
+		continue;
+	}
+	
 	$attachment->$key = $value;
 }
 
