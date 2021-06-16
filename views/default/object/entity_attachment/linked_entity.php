@@ -1,12 +1,12 @@
 <?php
 
 $entity = elgg_extract('entity', $vars);
-if (!$entity instanceof ElggEntity) {
+if (!$entity instanceof \ElggEntity) {
 	return;
 }
 
 $linked_entity = get_entity($entity->entity_guid);
-if (!$linked_entity instanceof ElggEntity) {
+if (!$linked_entity instanceof \ElggEntity) {
 	return;
 }
 

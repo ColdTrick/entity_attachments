@@ -1,6 +1,6 @@
 <?php
 
-use Elgg\BadRequestException;
+use Elgg\Exceptions\Http\BadRequestException;
 
 $entity = elgg_extract('entity', $vars);
 if (!$entity instanceof \ElggObject) {

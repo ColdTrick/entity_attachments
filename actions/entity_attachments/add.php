@@ -38,7 +38,7 @@ $attachment->order = time();
 $attachment->attachment_type = $type;
 
 foreach ($params as $key => $value) {
-	if (in_array($key, EntityAttachment::$primary_attr_names)) {
+	if (in_array($key, \EntityAttachment::PRIMARY_ATTR_NAMES)) {
 		// prevent abuse
 		continue;
 	}

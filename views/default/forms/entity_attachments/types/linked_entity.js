@@ -1,6 +1,4 @@
-define(function(require) {
-	var $ = require('jquery');
-	var elgg = require('elgg');
+define(['jquery', 'elgg'], function($, elgg) {
 	
 	var getAdditionalFilters = function() {
 		var $subtype = $('select[name="linked_entity[subtype]"]');

@@ -1,4 +1,4 @@
-define(['jquery', 'elgg', 'elgg/Ajax'], function($, elgg, Ajax) {
+define(['jquery', 'elgg/Ajax', 'jquery-ui/widgets/sortable'], function($, Ajax) {
 	
 	var initSorting = function() {
 		$('.entity-attachments').sortable({
@@ -32,7 +32,7 @@ define(['jquery', 'elgg', 'elgg/Ajax'], function($, elgg, Ajax) {
 		var ajax = new Ajax();
 		ajax.action('entity_attachments/add', {
 			data: ajax.objectify(this),
-		}).success(function(output, statusText, jqXHR) {
+		}).done(function(output, statusText, jqXHR) {
 			if (jqXHR.AjaxData.status !== -1) {
 				$('.elgg-listing-full[data-guid="' + guid + '"] .elgg-module-entity_attachments > .elgg-body').html(output);
 				initSorting();
