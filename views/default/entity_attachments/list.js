@@ -32,11 +32,9 @@ define(['jquery', 'elgg/Ajax', 'jquery-ui/widgets/sortable'], function($, Ajax) 
 		var ajax = new Ajax();
 		ajax.action('entity_attachments/add', {
 			data: ajax.objectify(this),
-		}).done(function(output, statusText, jqXHR) {
-			if (jqXHR.AjaxData.status !== -1) {
-				$('.elgg-listing-full[data-guid="' + guid + '"] .elgg-module-entity_attachments > .elgg-body').html(output);
-				initSorting();
-			}
+		}).done(function(output) {
+			$('.elgg-listing-full[data-guid="' + guid + '"] .elgg-module-entity_attachments > .elgg-body').html(output);
+			initSorting();
 			
 			$.colorbox.close();
 		});
