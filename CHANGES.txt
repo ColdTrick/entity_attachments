@@ -1,6 +1,10 @@
 Version history
 ===============
 
+2.0 (2021-09-27):
+
+- changed: update for Elgg 4
+
 1.2.2 (2020-09-01):
 
 - fixed: prevent changing base entity attributes
