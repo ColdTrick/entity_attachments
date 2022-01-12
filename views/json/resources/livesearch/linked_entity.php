@@ -13,9 +13,9 @@ $limit = (int) elgg_extract('limit', $vars, elgg_get_config('default_limit'));
 $query = elgg_extract('term', $vars, elgg_extract('q', $vars));
 $input_name = elgg_extract('name', $vars);
 
-$registered_subtypes = get_registered_entity_types('object');
-$subtypes = (array) elgg_extract('subtype', $vars, $registered_subtypes, false);
-$subtypes = array_intersect($subtypes, $registered_subtypes);
+$searchable_subtypes = elgg_extract('object', elgg_entity_types_with_capability('searchable'), []);
+$subtypes = (array) elgg_extract('subtype', $vars, $searchable_subtypes, false);
+$subtypes = array_intersect($subtypes, $searchable_subtypes);
 
 $options = [
 	'query' => $query,

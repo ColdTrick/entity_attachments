@@ -6,9 +6,9 @@ elgg_require_js('forms/entity_attachments/types/linked_entity');
 $fields = [];
 
 // subtype filter
-$registered_subtypes = get_registered_entity_types('object');
-$supported_subtypes = elgg_extract('supported_subtypes', $vars, $registered_subtypes);
-$supported_subtypes = array_intersect($supported_subtypes, $registered_subtypes);
+$searchable_subtypes = elgg_extract('object', elgg_entity_types_with_capability('searchable'), []);
+$supported_subtypes = elgg_extract('supported_subtypes', $vars, $searchable_subtypes);
+$supported_subtypes = array_intersect($supported_subtypes, $searchable_subtypes);
 
 $options = [];
 foreach ($supported_subtypes as $subtype) {
