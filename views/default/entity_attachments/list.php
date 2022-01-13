@@ -5,7 +5,7 @@ if (!$entity instanceof \ElggObject) {
 	return;
 }
 
-if (!is_registered_entity_type($entity->getType(), $entity->getSubtype())) {
+if (!$entity->hasCapability('searchable')) {
 	return;
 }
 
