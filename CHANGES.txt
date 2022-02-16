@@ -1,6 +1,10 @@
 Version history
 ===============
 
+3.0 (2022-02-16):
+
+- changed: updated code for Elgg 4.1 capabilities system
+
 2.0 (2021-09-27):
 
 - changed: update for Elgg 4
