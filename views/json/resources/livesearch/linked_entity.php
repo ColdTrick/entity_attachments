@@ -23,8 +23,11 @@ $options = [
 	'subtypes' => $subtypes,
 	'container_guid' => (array) elgg_extract('container_guid', $vars, null, false),
 	'limit' => $limit,
-	'sort' => 'title',
-	'order' => 'ASC',
+	'sort_by' => [
+		'property_type' => 'metadata',
+		'property' => 'title',
+		'direction' => 'ASC',
+	],
 	'fields' => ['metadata' => ['title']],
 	'item_view' => 'search/entity',
 	'input_name' => $input_name,
