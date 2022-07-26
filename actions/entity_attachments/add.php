@@ -54,10 +54,10 @@ $attachments = elgg_list_entities([
 	'container_guid' => $guid,
 	'limit' => false,
 	'list_class' => 'entity-attachments',
-	'order_by_metadata' => [
-		'name' => 'order',
-		'order' => 'asc',
-		'as' => 'integer',
+	'sort_by' => [
+		'property' => 'order',
+		'direction' => 'asc',
+		'signed' => true,
 	],
 ]);
 

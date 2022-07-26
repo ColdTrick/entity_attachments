@@ -42,7 +42,7 @@ foreach ($options_values as $key => $label) {
 			'icon' => 'filter',
 			'text' => elgg_echo('filter'),
 			'href' => false,
-			'rel' => 'toggle',
+			'class' => 'elgg-toggle',
 			'data-toggle-selector' => '.entity-attachments-type-linked_entity .elgg-field:has(#entity-attachments-linked-entity-filter)',
 		]);
 	}
