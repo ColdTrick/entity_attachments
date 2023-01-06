@@ -19,6 +19,11 @@ return [
 		'entity_attachments/sort' => [],
 	],
 	'hooks' => [
+		'register' => [
+			'menu:entity' => [
+				'ColdTrick\EntityAttachments\Menus::makeDeletePrimaryAction' => [],
+			],
+		],
 		'view_vars' => [
 			'object/elements/full' => [
 				'ColdTrick\EntityAttachments\Views::addAttachments' => [],
