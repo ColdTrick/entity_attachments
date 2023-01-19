@@ -1,6 +1,10 @@
 Version history
 ===============
 
+5.0.1 (2023-01-19):
+
+- changed: entity menu now behaves normally in summary metadata
+
 5.0 (2022-08-24):
 
 - changed: updated for Elgg 4.3
