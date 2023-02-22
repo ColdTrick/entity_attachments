@@ -2,21 +2,24 @@
 
 namespace ColdTrick\EntityAttachments;
 
+/**
+ * Menu related callbacks
+ */
 class Menus {
 	
 	/**
 	 * Moves the delete action to a primary action (outside of the dropdown)
 	 *
-	 * @param \Elgg\Hook $hook 'register', 'menu:entity'
+	 * @param \Elgg\Event $event 'register', 'menu:entity'
 	 *
 	 * @return []
 	 */
-	public static function makeDeletePrimaryAction(\Elgg\Hook $hook) {
-		if (!$hook->getEntityParam() instanceof \EntityAttachment) {
+	public static function makeDeletePrimaryAction(\Elgg\Event $event) {
+		if (!$event->getEntityParam() instanceof \EntityAttachment) {
 			return;
 		}
 		
-		$menu = $hook->getValue();
+		$menu = $event->getValue();
 		
 		/** @var \ElggMenuItem $delete */
 		$delete = $menu->get('delete');

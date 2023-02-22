@@ -2,18 +2,21 @@
 
 namespace ColdTrick\EntityAttachments;
 
+/**
+ * View related callbacks
+ */
 class Views {
 	
 	/**
 	 * Set the attachments vars
 	 *
-	 * @param \Elgg\Hook $hook 'view_vars', 'object/elements/full'
+	 * @param \Elgg\Event $event 'view_vars', 'object/elements/full'
 	 *
 	 * @return []
 	 */
-	public static function addAttachments(\Elgg\Hook $hook) {
+	public static function addAttachments(\Elgg\Event $event) {
 		
-		$vars = $hook->getValue();
+		$vars = $event->getValue();
 		if (isset($vars['attachments'])) {
 			return;
 		}

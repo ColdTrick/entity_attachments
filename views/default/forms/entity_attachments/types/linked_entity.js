@@ -1,6 +1,6 @@
 define(['jquery', 'elgg'], function($, elgg) {
 	
-	var getAdditionalFilters = function() {
+	function getAdditionalFilters() {
 		var $subtype = $('select[name="linked_entity[subtype]"]');
 		var $container_guid = $('input[type="hidden"][name^="linked_entity[container_guids]"]');
 		
@@ -14,6 +14,7 @@ define(['jquery', 'elgg'], function($, elgg) {
 			if (!value.length) {
 				return;
 			}
+			
 			params.container_guid.push(value);
 		});
 		

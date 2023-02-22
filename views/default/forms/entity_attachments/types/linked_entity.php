@@ -21,6 +21,7 @@ foreach ($supported_subtypes as $subtype) {
 	
 	$options[$subtype] = $label;
 }
+
 natcasesort($options);
 $options = [
 	'' => elgg_echo('all'),

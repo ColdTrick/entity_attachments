@@ -30,6 +30,10 @@ $menu = '';
 $title = '';
 if ($entity->canEdit()) {
 	$title = '&nbsp'; // required to force existence of header
+
+	if (empty($attachments)) {
+		$attachments = '&nbsp'; // required to force existence of body
+	}
 	
 	elgg_require_js('entity_attachments/list');
 

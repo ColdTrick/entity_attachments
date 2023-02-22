@@ -18,7 +18,7 @@ return [
 		'entity_attachments/add' => [],
 		'entity_attachments/sort' => [],
 	],
-	'hooks' => [
+	'events' => [
 		'register' => [
 			'menu:entity' => [
 				'ColdTrick\EntityAttachments\Menus::makeDeletePrimaryAction' => [],

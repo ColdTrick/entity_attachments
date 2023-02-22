@@ -1,6 +1,6 @@
 define(['jquery', 'elgg/Ajax', 'jquery-ui/widgets/sortable'], function($, Ajax) {
 	
-	var initSorting = function() {
+	function initSorting() {
 		$('.entity-attachments').sortable({
 			containment: 'parent',
 			axis: 'y',

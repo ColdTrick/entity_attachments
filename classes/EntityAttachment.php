@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * EntityAttachment object class
+ */
 class EntityAttachment extends ElggObject {
 
 	/**
@@ -15,14 +17,14 @@ class EntityAttachment extends ElggObject {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function getURL() {
+	public function getURL(): string {
 		return $this->href ?: parent::getURL();
 	}
 	
 	/**
 	 * {@inheritDoc}
 	 */
-	public function canEdit($user_guid = 0) {
+	public function canEdit(int $user_guid = 0): bool {
 		$result = parent::canEdit($user_guid);
 		
 		if ($result === true) {
