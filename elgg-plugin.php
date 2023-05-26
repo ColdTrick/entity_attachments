@@ -21,7 +21,7 @@ return [
 	'events' => [
 		'register' => [
 			'menu:entity' => [
-				'ColdTrick\EntityAttachments\Menus::makeDeletePrimaryAction' => [],
+				'ColdTrick\EntityAttachments\Menus\Entity::makeDeletePrimaryAction' => [],
 			],
 		],
 		'view_vars' => [
