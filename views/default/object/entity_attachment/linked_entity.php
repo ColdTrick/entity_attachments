@@ -5,7 +5,7 @@ if (!$entity instanceof \ElggEntity) {
 	return;
 }
 
-$linked_entity = get_entity($entity->entity_guid);
+$linked_entity = get_entity((int) $entity->entity_guid);
 if (!$linked_entity instanceof \ElggEntity) {
 	return;
 }
