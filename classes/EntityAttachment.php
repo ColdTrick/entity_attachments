@@ -1,8 +1,14 @@
 <?php
+
 /**
  * EntityAttachment object class
+ *
+ * @property string $attachment_type type of the entity attachment
+ * @property int    $entity_guid     linked entity GUID
+ * @property string $href            URL to a resource
+ * @property int    $order           order of the attachment
  */
-class EntityAttachment extends ElggObject {
+class EntityAttachment extends \ElggObject {
 
 	/**
 	 * {@inheritDoc}
