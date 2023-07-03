@@ -15,7 +15,7 @@ if ($entity->getContainerEntity() instanceof \ElggObject) {
 
 $attachments = elgg_list_entities([
 	'type' => 'object',
-	'subtype' => 'entity_attachment',
+	'subtype' => \EntityAttachment::SUBTYPE,
 	'container_guid' => $entity->guid,
 	'limit' => false,
 	'list_class' => 'entity-attachments',

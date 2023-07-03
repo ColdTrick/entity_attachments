@@ -9,14 +9,16 @@
  * @property int    $order           order of the attachment
  */
 class EntityAttachment extends \ElggObject {
-
+	
+	const SUBTYPE = 'entity_attachment';
+	
 	/**
 	 * {@inheritDoc}
 	 */
 	protected function initializeAttributes() {
 		parent::initializeAttributes();
 
-		$this->attributes['subtype'] = 'entity_attachment';
+		$this->attributes['subtype'] = self::SUBTYPE;
 		$this->attributes['access_id'] = ACCESS_PUBLIC;
 	}
 

@@ -24,6 +24,11 @@ return [
 				'ColdTrick\EntityAttachments\Menus\Entity::makeDeletePrimaryAction' => [],
 			],
 		],
+		'seeds' => [
+			'database' => [
+				'ColdTrick\EntityAttachments\Seeder::register' => ['priority' => 600],
+			],
+		],
 		'view_vars' => [
 			'object/elements/full' => [
 				'ColdTrick\EntityAttachments\Views::addAttachments' => [],

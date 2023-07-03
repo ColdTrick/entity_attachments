@@ -50,7 +50,7 @@ $attachment->save();
 
 $attachments = elgg_list_entities([
 	'type' => 'object',
-	'subtype' => 'entity_attachment',
+	'subtype' => \EntityAttachment::SUBTYPE,
 	'container_guid' => $guid,
 	'limit' => false,
 	'list_class' => 'entity-attachments',
