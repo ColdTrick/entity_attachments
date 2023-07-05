@@ -1,6 +1,11 @@
 Version history
 ===============
 
+6.1 (2023-07-05):
+
+- added: database seeder
+- fixed: cast entity_guid to int
+
 6.0 (2023-06-02):
 
 - changed: conflict with Elgg < 5.0
