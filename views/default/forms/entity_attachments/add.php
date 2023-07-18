@@ -34,7 +34,7 @@ foreach ($options_values as $key => $label) {
 	$view_contents = elgg_view('forms/entity_attachments/types/' . $key, $vars);
 	$view_contents .= elgg_view_field([
 		'#type' => 'submit',
-		'value' => elgg_echo('save'),
+		'text' => elgg_echo('save'),
 	]);
 	
 	if ($key === 'linked_entity') {
