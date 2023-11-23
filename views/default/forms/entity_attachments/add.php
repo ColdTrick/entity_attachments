@@ -3,7 +3,7 @@
 use Elgg\Exceptions\Http\BadRequestException;
 
 $entity = elgg_extract('entity', $vars);
-if (!$entity instanceof \ElggObject) {
+if (!$entity instanceof \ElggObject || !$entity->canEdit()) {
 	throw new BadRequestException();
 }
 
