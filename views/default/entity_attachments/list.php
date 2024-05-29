@@ -35,7 +35,7 @@ if ($entity->canEdit()) {
 		$attachments = '&nbsp'; // required to force existence of body
 	}
 	
-	elgg_require_js('entity_attachments/list');
+	elgg_import_esm('entity_attachments/list');
 
 	$menu = elgg_view('output/url', [
 		'text' => elgg_echo('item:object:entity_attachment:add'),

@@ -1,6 +1,6 @@
 <?php
 
-elgg_require_js('forms/entity_attachments/types/linked_entity');
+elgg_import_esm('forms/entity_attachments/types/linked_entity');
 
 // filter
 $fields = [];
@@ -35,11 +35,13 @@ $fields[] = [
 ];
 
 // group filter
-$fields[] = [
-	'#type' => 'grouppicker',
-	'#label' => elgg_echo('entity_attachments:linked_entity:group'),
-	'name' => 'linked_entity[container_guids]',
-];
+if (elgg_is_active_plugin('groups')) {
+	$fields[] = [
+		'#type' => 'grouppicker',
+		'#label' => elgg_echo('entity_attachments:linked_entity:group'),
+		'name' => 'linked_entity[container_guids]',
+	];
+}
 
 echo elgg_view_field([
 	'#type' => 'fieldset',

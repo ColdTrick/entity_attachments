@@ -18,10 +18,6 @@ if ($linked_entity instanceof \ElggUser) {
 }
 
 $vars['icon'] = elgg_view_icon($icon);
-
-$vars['title'] = elgg_view('output/url', [
-	'text' => $linked_entity->getDisplayName(),
-	'href' => $linked_entity->getURL(),
-]);
+$vars['title'] = elgg_view_entity_url($linked_entity);
 
 echo elgg_view('object/entity_attachment/default', $vars);

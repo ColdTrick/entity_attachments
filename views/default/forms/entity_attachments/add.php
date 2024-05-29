@@ -21,6 +21,10 @@ $options_values = [
 	'download_link' => elgg_echo('entity_attachments:forms:add:type:download_link'),
 ];
 
+if (!elgg_is_active_plugin('groups')) {
+	unset($options_values['linked_group']);
+}
+
 $body .= elgg_view_field([
 	'#type' => 'radio',
 	'#label' => elgg_echo('entity_attachments:forms:add:type'),

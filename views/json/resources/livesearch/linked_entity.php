@@ -17,7 +17,7 @@ $searchable_subtypes = elgg_extract('object', elgg_entity_types_with_capability(
 $subtypes = (array) elgg_extract('subtype', $vars, $searchable_subtypes, false);
 $subtypes = array_intersect($subtypes, $searchable_subtypes);
 
-$options = [
+$body = elgg_list_entities([
 	'query' => $query,
 	'type' => 'object',
 	'subtypes' => $subtypes,
@@ -31,8 +31,6 @@ $options = [
 	'fields' => ['metadata' => ['title']],
 	'item_view' => 'search/entity',
 	'input_name' => $input_name,
-];
-
-$body = elgg_list_entities($options, 'elgg_search');
+], 'elgg_search');
 
 echo elgg_view_page('', $body);
