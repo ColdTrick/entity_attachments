@@ -12,23 +12,22 @@ class Views {
 	 *
 	 * @param \Elgg\Event $event 'view_vars', 'object/elements/full'
 	 *
-	 * @return []
+	 * @return null|array
 	 */
-	public static function addAttachments(\Elgg\Event $event) {
-		
+	public static function addAttachments(\Elgg\Event $event): ?array {
 		$vars = $event->getValue();
 		if (isset($vars['attachments'])) {
-			return;
+			return null;
 		}
 		
 		$entity = elgg_extract('entity', $vars);
 		if (!$entity instanceof \ElggObject) {
-			return;
+			return null;
 		}
 		
 		$attachments = elgg_view('entity_attachments/list', ['entity' => $entity]);
 		if (empty($attachments)) {
-			return;
+			return null;
 		}
 		
 		$vars['attachments'] = $attachments;

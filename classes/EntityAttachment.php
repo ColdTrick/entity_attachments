@@ -13,7 +13,7 @@ class EntityAttachment extends \ElggObject {
 	const SUBTYPE = 'entity_attachment';
 	
 	/**
-	 * {@inheritDoc}
+	 * {@inheritdoc}
 	 */
 	protected function initializeAttributes() {
 		parent::initializeAttributes();
@@ -23,14 +23,14 @@ class EntityAttachment extends \ElggObject {
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * {@inheritdoc}
 	 */
 	public function getURL(): string {
 		return $this->href ?: parent::getURL();
 	}
 	
 	/**
-	 * {@inheritDoc}
+	 * {@inheritdoc}
 	 */
 	public function canEdit(int $user_guid = 0): bool {
 		$result = parent::canEdit($user_guid);
