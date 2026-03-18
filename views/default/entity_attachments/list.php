@@ -26,6 +26,11 @@ $attachments = elgg_list_entities([
 	],
 ]);
 
+$module_vars = [];
+if (empty($attachments)) {
+	$module_vars['class'] = 'hidden';
+}
+
 $menu = '';
 $title = '';
 if ($entity->canEdit()) {
@@ -58,4 +63,6 @@ if (empty($menu) && empty($attachments)) {
 	return;
 }
 
-echo elgg_view_module('entity_attachments', $title, $attachments, ['menu' => $menu]);
+$module_vars['menu'] = $menu;
+
+echo elgg_view_module('entity_attachments', $title, $attachments, $module_vars);

@@ -36,6 +36,7 @@ $(document).on('submit', '.elgg-form-entity-attachments-add', function(event) {
 		data: ajax.objectify(this),
 	}).done(function(output) {
 		$('.elgg-listing-full[data-guid="' + guid + '"] .elgg-module-entity_attachments > .elgg-body').html(output);
+		$('.elgg-listing-full[data-guid="' + guid + '"] .elgg-module-entity_attachments').removeClass('hidden');
 		initSorting();
 		
 		$.colorbox.close();
