@@ -1,6 +1,10 @@
 Version history
 ===============
 
+7.0.2 (2026-04-17):
+
+- several small chores/fixes
+
 7.0.1 (2025-03-27):
 
 - several small chores/fixes
