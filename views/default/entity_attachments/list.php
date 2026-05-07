@@ -31,38 +31,46 @@ if (empty($attachments)) {
 	$module_vars['class'] = 'hidden';
 }
 
-$menu = '';
-$title = '';
+$title = elgg_echo('entity_attachments:list:title');
 if ($entity->canEdit()) {
-	$title = '&nbsp'; // required to force existence of header
-
 	if (empty($attachments)) {
 		$attachments = '&nbsp'; // required to force existence of body
 	}
 	
 	elgg_import_esm('entity_attachments/list');
 
-	$menu = elgg_view('output/url', [
-		'text' => elgg_echo('item:object:entity_attachment:add'),
-		'icon' => 'paperclip',
-		'href' => elgg_http_add_url_query_elements('ajax/form/entity_attachments/add', [
-			'guid' => $entity->guid,
-		]),
-		'class' => [
-			'elgg-lightbox',
-			'elgg-button',
-			'elgg-button-action',
-		],
-		'data-colorbox-opts' => json_encode([
-			'width' => 500,
-		]),
-	]);
+	elgg_register_event_handler('register', 'menu:entity', function(\Elgg\Event $event) use ($entity) {
+		$event_entity = $event->getEntityParam();
+		if (!$event_entity instanceof \ElggEntity) {
+			return null;
+		}
+
+		if ($event_entity->guid !== $entity->guid) {
+			return null;
+		}
+
+		$result = $event->getValue();
+		$result[] = \ElggMenuItem::factory([
+			'name' => 'entity_attachments:add',
+			'text' => elgg_echo('item:object:entity_attachment:add'),
+			'icon' => 'paperclip',
+			'href' => elgg_http_add_url_query_elements('ajax/form/entity_attachments/add', [
+				'guid' => $entity->guid,
+			]),
+			'class' => [
+				'elgg-lightbox',
+			],
+			'data-colorbox-opts' => json_encode([
+				'width' => 500,
+			]),
+		]);
+
+		return $result;
+	});
 }
 
-if (empty($menu) && empty($attachments)) {
+if (empty($attachments)) {
 	return;
 }
-
-$module_vars['menu'] = $menu;
 
 echo elgg_view_module('entity_attachments', $title, $attachments, $module_vars);

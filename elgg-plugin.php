@@ -9,9 +9,6 @@ return [
 			'type' => 'object',
 			'subtype' => 'entity_attachment',
 			'class' => \EntityAttachment::class,
-			'capabilities' => [
-				'commentable' => false,
-			],
 		],
 	],
 	'actions' => [
