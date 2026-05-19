@@ -1,10 +1,11 @@
 <?php
 /**
- * This file was created by Translation Editor v11.1
- * On 2023-05-17 14:31
+ * This file was created by Translation Editor v14.0.4
+ * On 2026-05-19 14:17
  */
 
 return array (
+  'entity_attachments:list:title' => 'Bijlages',
   'entity_attachments:linked_entity:search' => 'Zoek naar content obv titel',
   'entity_attachments:linked_entity:subtype' => 'Filter op content type',
   'entity_attachments:linked_entity:group' => 'Filter op groep',
