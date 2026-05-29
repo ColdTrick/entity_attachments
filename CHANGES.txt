@@ -1,6 +1,10 @@
 Version history
 ===============
 
+7.1 (2026-05-29):
+
+- changed: moved add attachment menu item from module menu to entity menu
+
 7.0.2 (2026-04-17):
 
 - several small chores/fixes
