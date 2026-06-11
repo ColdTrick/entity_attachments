@@ -16,11 +16,6 @@ return [
 		'entity_attachments/sort' => [],
 	],
 	'events' => [
-		'register' => [
-			'menu:entity' => [
-				'ColdTrick\EntityAttachments\Menus\Entity::makeDeletePrimaryAction' => [],
-			],
-		],
 		'seeds' => [
 			'database' => [
 				'ColdTrick\EntityAttachments\Seeder::register' => ['priority' => 600],
