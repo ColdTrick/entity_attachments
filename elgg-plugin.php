@@ -2,7 +2,7 @@
 
 return [
 	'plugin' => [
-		'version' => '7.1',
+		'version' => '7.2',
 	],
 	'entities' => [
 		[
