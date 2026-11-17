@@ -37,7 +37,7 @@ class Seeder extends Seed {
 			}
 			
 			try {
-				/* @var $entity \EntityAttachment */
+				/** @var \EntityAttachment $entity */
 				$entity = $this->createObject([
 					'subtype' => \EntityAttachment::SUBTYPE,
 					'owner_guid' => $container_guid,
@@ -73,7 +73,7 @@ class Seeder extends Seed {
 	 * {@inheritdoc}
 	 */
 	public function unseed() {
-		/* @var $entities \ElggBatch */
+		/** @var \ElggBatch $entities */
 		$entities = elgg_get_entities([
 			'type' => 'object',
 			'subtype' => \EntityAttachment::SUBTYPE,
@@ -83,7 +83,7 @@ class Seeder extends Seed {
 			'batch_inc_offset' => false,
 		]);
 		
-		/* @var $entity \EntityAttachment */
+		/** @var \EntityAttachment $entity */
 		foreach ($entities as $entity) {
 			if ($entity->delete()) {
 				$this->log("Deleted entity attachment {$entity->guid}");
