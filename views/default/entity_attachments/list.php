@@ -52,14 +52,14 @@ if ($entity->canEdit()) {
 		$result = $event->getValue();
 		$result[] = \ElggMenuItem::factory([
 			'name' => 'entity_attachments:add',
-			'text' => elgg_echo('item:object:entity_attachment:add'),
 			'icon' => 'paperclip',
-			'href' => elgg_http_add_url_query_elements('ajax/form/entity_attachments/add', [
+			'text' => elgg_echo('item:object:entity_attachment:add'),
+			'href' => elgg_generate_url('ajax', [
+				'type' => 'form',
+				'segments' => 'entity_attachments/add',
 				'guid' => $entity->guid,
 			]),
-			'class' => [
-				'elgg-lightbox',
-			],
+			'class' => ['elgg-lightbox'],
 			'data-colorbox-opts' => json_encode([
 				'width' => 500,
 			]),
